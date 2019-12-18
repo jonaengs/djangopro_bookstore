@@ -40,7 +40,10 @@ INSTALLED_APPS = [
 
     # Local
     'users.apps.UsersConfig',
-    'pages.apps.PagesConfig'
+    'pages.apps.PagesConfig',
+
+    # Packages
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -134,3 +137,13 @@ STATIC_URL = '/static/'
 AUTH_USER_MODEL = 'users.CustomUser'
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'
+
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
+STATICFILES_FINDERS = [
+    "django.contrib.staticfiles.finders.FileSystemFinder",
+    "django.contrib.staticfiles.finders.AppDirectoriesFinder",
+]
+
+CRISPY_TEMPLATE_PACK = "bootstrap4"

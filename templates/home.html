@@ -1,11 +1,13 @@
 {% extends '_base.html' %}
+{% load static %}
 
 {% block title %}Home{% endblock title %}
 
 {% block content %}
     <h1>Homepage</h1>
+    <img src="{% static 'images/djangoforprofessionals.jpg' %}" class="bookcover">
     {% if user.is_authenticated %}
-        Hello {{ user.email }}
+        <p>Hello {{ user.email }}</p>
         <p><a href="{% url 'logout' %}">Log out</a></p>
     {% else %}
         <p>You are not logged in</p>
