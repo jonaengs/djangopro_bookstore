@@ -6,7 +6,7 @@ services:
         build: .
         command: python /code/manage.py runserver 0.0.0.0:8000
         environment:
-            - SECRET_KEY=4l7)%mapzx=c27-fk86ho%$$2f001#d_go)ka-s5u^^$vaxo1m&
+            - SECRET_KEY=4l7)%mapzx=c27-fk86ho%$$2f001#d_go)ka-s5u^^$$vaxo1m&
             - DEBUG=True
         volumes:
             - .:/code
