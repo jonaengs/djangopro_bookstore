@@ -5,13 +5,14 @@
 
 {% block content %}
     <h1>Homepage</h1>
-    <img src="{% static 'images/djangoforprofessionals.jpg' %}" class="bookcover">
+    <form action="{% url 'search_resulsts' %}" method="get" class="form-inline mt-2 mt-md-0">
+        <input type="text" name="q" class="form-control mr-sm-2" placeholder="Search" aria-label="search">
+    </form>
     {% if user.is_authenticated %}
-        <p>Hello {{ user.email }}</p>
-        <p><a href="{% url 'account_logout' %}">Log out</a></p>
+        <p>Hi {{ user.email }}</p>
+        <a href="{% url 'account_logout' %}">Log out</a>
     {% else %}
-        <p>You are not logged in</p>
-        <a href="{% url 'account_login' %}">Log in</a>
-        <a href="{% url 'account_signup' %}">Sign up</a>
+        <p><a href="{% url 'account_login' %}">Log in</a></p>
+        <p></p><a href="{% url 'account_signup' %}">Sign up</a></p>
     {% endif %}
 {% endblock content %}
