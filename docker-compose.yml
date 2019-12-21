@@ -8,6 +8,8 @@ services:
         environment:
             - SECRET_KEY=4l7)%mapzx=c27-fk86ho%$$2f001#d_go)ka-s5u^^$$vaxo1m&
             - DEBUG=True
+            - STRIPE_TEST_PUBLISHABLE_KEY=pk_test_vIfJEHTB3rQ4VbaRGrjKZ4ld00rno3DypI
+            - STRIPE_TEST_SECRET_KEY=sk_test_vUJQMcfyXcJV3XXWtomOBjkB00W0votwgt
         volumes:
             - .:/code
         ports:
